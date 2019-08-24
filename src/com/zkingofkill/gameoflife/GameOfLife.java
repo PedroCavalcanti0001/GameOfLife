@@ -1,3 +1,5 @@
+package com.zkingofkill.gameoflife;
+
 public class GameOfLife {
     private boolean[][] arr;
 
@@ -39,11 +41,7 @@ public class GameOfLife {
 
             }
         }
-        for (int colunm = 0; colunm < deaths.length; colunm++) {
-            for (int row = 0; row < deaths[colunm].length; row++) {
-                arr[colunm][row] = deaths[colunm][row];
-            }
-        }
+       arr = deaths;
     }
 
     public void show() {
