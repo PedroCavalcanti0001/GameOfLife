@@ -1,3 +1,5 @@
+package com.zkingofkill.gameoflife;
+
 public class Test {
     public static void main(String[] args) {
         GameOfLife gol = new GameOfLife(10, 8);
