@@ -14,14 +14,16 @@ public class GameOfLife {
     }
 
     public void execCycle() {
-        boolean[][] deaths = new boolean[arr.length][arr[arr.length-1].length];
+        boolean[][] deaths = new boolean[arr.length][arr[arr.length - 1].length];
         for (int colunm = 0; colunm < arr.length; colunm++) {
             for (int row = 0; row < arr[colunm].length; row++) {
+
                 int livingNeighbors = 0;
-                if (row >= 1 && arr[colunm][row - 1]) livingNeighbors+=1;
-                if (row <= arr[colunm].length - 2 && arr[colunm][row + 1]) livingNeighbors+=1;
-                if (colunm >= 1 && arr[colunm - 1][row])  livingNeighbors+=1;
-                if (colunm <= arr.length - 2 && arr[colunm + 1][row]) livingNeighbors+=1;
+                if (row >= 1 && arr[colunm][row - 1]) livingNeighbors += 1;
+                if (row <= arr[colunm].length - 2 && arr[colunm][row + 1]) livingNeighbors += 1;
+                if (colunm >= 1 && arr[colunm - 1][row]) livingNeighbors += 1;
+                if (colunm <= arr.length - 2 && arr[colunm + 1][row]) livingNeighbors += 1;
+
                 if (arr[colunm][row]) {
                     if (livingNeighbors < 2) {
                         deaths[colunm][row] = false;
@@ -37,12 +39,11 @@ public class GameOfLife {
 
             }
         }
-           for (int colunm = 0; colunm < deaths.length; colunm++) {
-                for (int row = 0; row < deaths[colunm].length; row++) {
-                    arr[colunm][row] = deaths[colunm][row];
-                }
+        for (int colunm = 0; colunm < deaths.length; colunm++) {
+            for (int row = 0; row < deaths[colunm].length; row++) {
+                arr[colunm][row] = deaths[colunm][row];
             }
-
+        }
     }
 
     public void show() {
